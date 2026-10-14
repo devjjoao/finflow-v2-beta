@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: "Sora", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+html:not(.dark) {
+  color-scheme: light;
+}
+
+body {
+  @apply bg-light text-slate-800 dark:bg-base dark:text-ink font-body antialiased transition-colors duration-300;
+}
+
+::selection {
+  background: rgba(59, 130, 246, 0.35);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(139, 147, 167, 0.25);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.card {
+  @apply bg-light-card border border-light-border dark:bg-base-card dark:border-base-border rounded-xl2 shadow-sm;
+}
+
+.input {
+  @apply w-full bg-white border border-light-border dark:bg-base-soft dark:border-base-border rounded-lg px-3 py-2 text-sm text-slate-800 dark:text-ink placeholder:text-slate-400 dark:placeholder:text-ink-faint outline-none focus:ring-2 focus:ring-brand/50 focus:border-brand transition;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center gap-2 rounded-lg bg-brand hover:bg-brand-deep text-white text-sm font-medium px-4 py-2 transition-colors shadow-glow;
+}
+
+.btn-ghost {
+  @apply inline-flex items-center justify-center gap-2 rounded-lg border border-light-border dark:border-base-border hover:border-brand/50 text-slate-700 dark:text-ink text-sm font-medium px-4 py-2 transition-colors;
+}
+
+.label-eyebrow {
+  @apply text-[11px] font-semibold uppercase tracking-wider text-slate-400 dark:text-ink-faint px-3;
+}
+
+.focus-ring {
+  @apply outline-none focus-visible:ring-2 focus-visible:ring-brand/60 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-base;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

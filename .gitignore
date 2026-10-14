@@ -1,0 +1,44 @@
+# Dependências
+node_modules
+.pnp
+.pnp.js
+
+# Next.js
+.next
+out
+
+# Deploy
+.vercel
+
+# Variáveis de ambiente (nunca versionar secrets)
+.env*
+!.env.example
+!.env.local.example
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Testes
+coverage
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Editores
+.idea
+.vscode
+
+# Chaves e certificados
+*.pem
+
+# Supabase CLI (arquivos temporários locais)
+supabase/.temp
+supabase/.branches
+
+# Agentes de IA (versionar as Skills e instruções do projeto)
+.agents
+skills-lock.json
